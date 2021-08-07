@@ -7,17 +7,24 @@ function woodCalculator(chairQuantity, tableQuantity, bedQuantity){
     let perTable = 10;
     let perBed = 45;
 
-    const chairMultiply = perChair * chairQuantity;
-    const tableMultiply = perTable * tableQuantity;
-    const bedMultiply = perBed * bedQuantity;
-
-    const totalWood = chairMultiply + tableMultiply + bedMultiply;
-    return totalWood;
+    if(typeof chairQuantity != 'number' || typeof tableQuantity != 'number' || typeof bedQuantity != 'number'){
+        console.log('Please Enter Valid Input');
+    }else{
+        const chairMultiply = perChair * chairQuantity;
+        const tableMultiply = perTable * tableQuantity;
+        const bedMultiply = perBed * bedQuantity;
+    
+        const totalWood = chairMultiply + tableMultiply + bedMultiply;
+        return totalWood;
+    }
+    
+        
+    
 }
 
 
-let chairQ = 4;
+let chairQ = 'k';
 let tableQ = 2;
 let bedQ = 1;
 const allWood = woodCalculator(chairQ, tableQ, bedQ);
-// console.log('apnar total kat lagbe ', allWood, ' cft');
+console.log(allWood);

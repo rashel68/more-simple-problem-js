@@ -34,10 +34,23 @@ for(const products of shop){
 
 // automation quantiy shopping cart 
 let shoppingCart = [
-    {product: 'Phone', price: 15000},
-    {product: 'watch', price: 2000},
-    {product: 'shirt', price: 400}
+    {product: 'Phone', price: 15000, quantity: 0},
+    {product: 'watch', price: 2000, quantity: 1},
+    {product: 'shirt', price: 400, quantity: 2}
 ];
 
-function cart(shop)
+function cart(shop){
+    let total = 0;
+    for(const products of shop){
+        if(products.quantity == 0){
+            continue;
+        }
+        let productPrice = products.price * products.quantity;
+        total = total + productPrice;
+    }
+    return total;
+}
+
+const result = cart(shoppingCart);
+console.log(result);
 
