@@ -28,5 +28,16 @@ for(const products of shop){
     let productPrice = products.price * products.quantity;
     totalPrice = totalPrice + productPrice;
 }
-console.log(totalPrice);
+// console.log(totalPrice);
+
+
+
+// automation quantiy shopping cart 
+let shoppingCart = [
+    {product: 'Phone', price: 15000},
+    {product: 'watch', price: 2000},
+    {product: 'shirt', price: 400}
+];
+
+function cart(shop)
 
